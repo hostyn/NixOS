@@ -38,6 +38,7 @@
   custom.programs.codium.enable = true;
   custom.programs.kitty.enable = true;
   custom.programs.wofi.enable = true;
+  custom.programs.obs.enable = true;
 
   custom.services.dunst.enable = true;
   custom.services.syncthing.enable = true;
@@ -144,7 +145,6 @@
       cifs-utils
       nfs-utils
       remmina
-      obs-studio
       vlc
     ] ++
     (with unstable; [
@@ -168,6 +168,7 @@
       };
       pulse.enable = true;
       jack.enable = true;
+      wireplumber.enable = true;
     };
   };
 
