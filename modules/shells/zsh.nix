@@ -16,8 +16,10 @@ in
     programs.zsh.enable = true;
 
     environment.systemPackages = with pkgs; [
+      age
       bat
       bottom
+      broot
       dogdns
       duf
       dust
@@ -27,12 +29,11 @@ in
       killall
       nano
       neovim
+      pciutils
       pwgen
+      sops
       unzip
       wget
-      pciutils
-      sops
-      age
     ];
 
     home-manager.users.${vars.user}.programs =
@@ -64,8 +65,10 @@ in
             top = "${pkgs.glances}/bin/galnces";
             htop = "${pkgs.bottom}/bin/btm";
             dig = "${pkgs.dogdns}/bin/dog";
+            tree = "${pkgs.broot}/bin/broot";
             code = "${pkgs.vscode}/bin/code --password-store=gnome-libsecret";
             rebuild = "sudo nixos-rebuild switch --flake ~/NixOS#$HOST";
+            config = "code ~/NixOS";
             ssh = "kitten ssh";
             k = "kubectl";
           };
