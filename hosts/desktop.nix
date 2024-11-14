@@ -146,6 +146,9 @@
       nfs-utils
       remmina
       vlc
+      jdk22
+      jetbrains.idea-community-bin
+      # (prismlauncher.override { jdks = [ jdk21 ]; }) # Minecraft launcher
     ] ++
     (with unstable; [
       moonlight-qt
