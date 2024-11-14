@@ -51,26 +51,27 @@ in
           history.share = true;
 
           shellAliases = {
-            vi = "${pkgs.neovim}/bin/nvim";
             cat = "${pkgs.bat}/bin/bat";
             catn = "/usr/bin/env cat";
-            ls = "${pkgs.eza}/bin/eza -ls name --group-directories-first";
+            code = "${pkgs.vscode}/bin/code --password-store=gnome-libsecret";
+            config = "code ~/NixOS";
+            df = "${pkgs.duf}/bin/duf";
+            dig = "${pkgs.dogdns}/bin/dog";
+            du = "${pkgs.dust}/bin/dust -Brn 20";
+            garbage = "nix-collect-garbage --delete-older-than 7d && sudo nix-collect-garbage --delete-older-than 7d";
+            htop = "${pkgs.bottom}/bin/btm";
+            k = "kubectl";
             l = "${pkgs.eza}/bin/eza -ls name --group-directories-first";
             la = "${pkgs.eza}/bin/eza -las name --group-directories-first";
+            lat = "${pkgs.eza}/bin/eza -laTs name --group-directories-first";
+            ls = "${pkgs.eza}/bin/eza -ls name --group-directories-first";
             lt = "${pkgs.eza}/bin/eza -lTs name --group-directories-first";
             lta = "${pkgs.eza}/bin/eza -laTs name --group-directories-first";
-            lat = "${pkgs.eza}/bin/eza -laTs name --group-directories-first";
-            df = "${pkgs.duf}/bin/duf";
-            du = "${pkgs.dust}/bin/dust -Brn 20";
-            top = "${pkgs.glances}/bin/galnces";
-            htop = "${pkgs.bottom}/bin/btm";
-            dig = "${pkgs.dogdns}/bin/dog";
-            tree = "${pkgs.broot}/bin/broot";
-            code = "${pkgs.vscode}/bin/code --password-store=gnome-libsecret";
             rebuild = "sudo nixos-rebuild switch --flake ~/NixOS#$HOST";
-            config = "code ~/NixOS";
             ssh = "kitten ssh";
-            k = "kubectl";
+            top = "${pkgs.glances}/bin/galnces";
+            tree = "${pkgs.broot}/bin/broot";
+            vi = "${pkgs.neovim}/bin/nvim";
           };
 
           plugins = [
