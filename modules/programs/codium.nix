@@ -12,7 +12,8 @@ in
     home-manager.users.${vars.user} = {
       programs.vscode = {
         enable = true;
-        # package = pkgs.vscodium;
+        package = pkgs.vscode-fhs;
+        enableUpdateCheck = false;
 
         # User settings
         userSettings = {
@@ -295,13 +296,28 @@ in
             "command" = "-gitlens.toggleFileBlame";
             "when" = "editorTextFocus && config.gitlens.keymap == 'chorded' && resource in 'gitlens:tabs:blameable'";
           }
+          {
+            "key" = "ctrl+shift+g shift+h";
+            "command" = "-gitlens.showQuickRepoHistory";
+            "when" = "!gitlens:disabled && config.gitlens.keymap == 'chorded'";
+          }
+          {
+            "key" = "ctrl+shift+g";
+            "command" = "-workbench.action.terminal.openDetectedLink";
+            "when" = "accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal'";
+          }
+          {
+            "key" = "ctrl+shift+g g";
+            "command" = "-workbench.view.scm";
+            "when" = "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'";
+          }
         ];
 
         # User snippets
         globalSnippets = {
           "console.log" = {
             prefix = "clg";
-            body = "console.log(\${1:value});";
+            body = "console.log(\${1:value})";
             description = "console.log shortcut";
             scope = "javascript,javascriptreact,typescript,typescriptreact";
           };
@@ -310,3 +326,4 @@ in
     };
   };
 }
+
