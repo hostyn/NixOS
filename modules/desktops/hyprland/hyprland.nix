@@ -72,7 +72,7 @@ in
 
               # SESSION KEYS
               "$mod SHIFT, Delete, exec, $HOME/.config/scripts/powermenu"
-              "$mod, L, exec, loginctl lock-session"
+              "$mod SHIFT, L, exec, loginctl lock-session"
 
               # WORKSPACE KEYS
               "$mod, E, focusworkspaceoncurrentmonitor, 1"
@@ -92,6 +92,12 @@ in
               "$mod SHIFT, I, movetoworkspace, 6"
               "$mod SHIFT, O, movetoworkspace, 7"
               "$mod SHIFT, P, movetoworkspace, 8"
+
+              # WORKPACE MOVEMENT KEYS
+              "$mod, h, movefocus, l"
+              "$mod, l, movefocus, r"
+              "$mod, k, movefocus, u"
+              "$mod, j, movefocus, d"
 
               # MONITOR KEYS
               "$mod, comma, focusmonitor, 0"
