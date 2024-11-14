@@ -120,6 +120,8 @@ in
             "float, title:(_crx_nngceckbapebfimnlniiiahkandclblb)" # Bitwarden Chrome extension
             "float, class:(ark)"
             "float, class:(org.kde.polkit-kde-authentication-agent-1)"
+            "workspace 3, class:(Code)"
+            "workspace 1, class:(Brave-browser)"
           ];
 
           general =
