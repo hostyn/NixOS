@@ -1,0 +1,14 @@
+keys:
+  - &finn age17h6sar3wheca4rmgpxp59q2xczyzsmdkkg5wyxjvtvj2kujn2y9stwutra
+  - &kube-1 age1ws7cq44r3td5awh28emtj2x85k2a0v22uf3syjvszk2367uegvqs0glwc8
+
+creation_rules:
+  - path_regex: secrets/desktop.yaml$
+    key_groups:
+      - age:
+          - *finn
+  - path_regex: secrets/server.yaml$
+    key_groups:
+      - age:
+          - *finn
+          - *kube-1

@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+pidof wofi && exit
+
+entries="<span color=\"#CF352E\">⏻  Shutdown </span>\n<span color=\"#cc7832\">  Reboot </span>\n<span color=\"#6a8759\">󰈆  Logout </span>\n<span color=\"#9876aa\">  Suspend </span>"
+
+selected=$(echo -e "$entries" | wofi -L 5 -m --dmenu | awk '{print tolower($3)}')
+
+case $selected in
+logout)
+  exec kill -9 -1
+  ;;
+suspend)
+  exec systemctl suspend
+  ;;
+reboot)
+  exec systemctl reboot
+  ;;
+shutdown)
+  exec systemctl poweroff
+  ;;
+esac
