@@ -1,15 +1,21 @@
-{
-  lib,
-  vars,
-  ...
-}: {
+{vars, ...}: {
   imports = [
     ./hardware-configuration.nix
   ];
 
+  ### --- Custom options --- ###
   custom.services.k3s.enable = false;
+  custom.programs.nh.enable = true;
   custom.shells.git.enable = true;
+  custom.programs.codium.enable = true;
 
+  ### --- Device specific --- ###
+
+  services.code-server.enable = true;
+  services.code-server.auth = "none";
+  services.code-server.user = vars.user;
+
+  ### --- Hardware specific --- ###
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
