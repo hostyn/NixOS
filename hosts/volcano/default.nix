@@ -11,6 +11,9 @@
   custom.shells.zsh.enable = true;
 
   ### --- Device specific --- ###
+  programs = {
+    direnv.enable = true;
+  };
 
   services.code-server.enable = true;
   services.code-server.auth = "none";
@@ -19,6 +22,10 @@
   services.code-server.host = vars.ipAddress;
   services.code-server.extensionsDir = "/home/${vars.user}/.vscode/extensions";
   services.code-server.userDataDir = "/home/${vars.user}/.config/Code";
+  services.code-server.disableGettingStartedOverride = true;
+  services.code-server.disableTelemetry = true;
+  services.code-server.disableUpdateCheck = true;
+  services.code-server.disableWorkspaceTrust = true;
 
   networking.firewall.allowedTCPPorts = [4444];
   networking.firewall.allowedUDPPorts = [4444];

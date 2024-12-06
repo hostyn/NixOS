@@ -129,8 +129,6 @@ in {
           (with pkgs.vscode-marketplace; [
             bbenoist.nix
             jnoortheen.nix-ide
-            mkhl.direnv
-            arrterian.nix-env-selector
 
             # Theming
             github.github-vscode-theme
