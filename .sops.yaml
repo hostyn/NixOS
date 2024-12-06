@@ -1,6 +1,7 @@
 keys:
   - &finn age17h6sar3wheca4rmgpxp59q2xczyzsmdkkg5wyxjvtvj2kujn2y9stwutra
   - &kube-1 age1ws7cq44r3td5awh28emtj2x85k2a0v22uf3syjvszk2367uegvqs0glwc8
+  - &volcano age16mj5fzsl36e75zfxdeaey3gwlnx2p6rdf6z90gpk05v2j4vcxqdqa4a7ep
 
 creation_rules:
   - path_regex: secrets/desktop.yaml$
@@ -12,3 +13,4 @@ creation_rules:
       - age:
           - *finn
           - *kube-1
+          - *volcano
