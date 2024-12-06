@@ -68,7 +68,7 @@ in {
   kube-1 = lib.nixosSystem {
     inherit system;
     specialArgs = {
-      inherit inputs system unstable;
+      inherit inputs system pkgs unstable;
       vars = {
         hostname = "kube-1";
         user = "serveradmin";
@@ -78,6 +78,30 @@ in {
 
     modules = [
       ./kube
+      ./server.nix
+
+      inputs.home-manager.nixosModules.home-manager
+      {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+      }
+      inputs.sops-nix.nixosModules.sops
+    ];
+  };
+
+  volcano = lib.nixosSystem {
+    inherit system;
+    specialArgs = {
+      inherit inputs system pkgs unstable;
+      vars = {
+        hostname = "volcano";
+        user = "hostyn";
+        ipAddress = "192.168.0.200";
+      };
+    };
+
+    modules = [
+      ./volcano
       ./server.nix
 
       inputs.home-manager.nixosModules.home-manager

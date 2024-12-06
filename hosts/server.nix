@@ -1,6 +1,7 @@
 {
   config,
   vars,
+  lib,
   ...
 }: {
   imports =
@@ -11,7 +12,7 @@
     ++ import ../modules/shells;
 
   ### --- Custom options --- ###
-  custom.services.k3s.enable = true;
+  custom.services.k3s.enable = lib.mkDefault true;
 
   custom.shells.zsh.enable = true;
 
