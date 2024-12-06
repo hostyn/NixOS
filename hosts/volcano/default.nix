@@ -18,6 +18,13 @@
 
   networking.firewall.allowedTCPPorts = [4444];
 
+  nix = {
+    settings = {
+      experimental-features = ["nix-command" "flakes"];
+      auto-optimise-store = true;
+    };
+  };
+
   ### --- Hardware specific --- ###
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
