@@ -17,8 +17,9 @@
   services.code-server.user = vars.user;
   services.code-server.port = 4444;
   services.code-server.host = vars.ipAddress;
+  services.code-server.extensionsDir = "/home/${vars.user}/.vscode/extensions";
+  services.code-server.userDataDir = "/home/${vars.user}/.config/Code";
 
-  networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [4444];
   networking.firewall.allowedUDPPorts = [4444];
 
