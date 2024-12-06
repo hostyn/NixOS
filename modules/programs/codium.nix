@@ -20,6 +20,8 @@ in {
 
         # User settings
         userSettings = {
+          "window.zoomLevel" = 2;
+
           "breadcrumbs.showArrays" = false;
           "breadcrumbs.showBooleans" = false;
           "breadcrumbs.showClasses" = false;
