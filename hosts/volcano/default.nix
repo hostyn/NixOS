@@ -16,6 +16,7 @@
   services.code-server.auth = "none";
   services.code-server.user = vars.user;
   services.code-server.port = 4444;
+  services.code-server.host = vars.ipAddress;
 
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [4444];
