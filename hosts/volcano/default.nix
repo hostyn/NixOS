@@ -14,6 +14,9 @@
   services.code-server.enable = true;
   services.code-server.auth = "none";
   services.code-server.user = vars.user;
+  services.code-server.port = 4444;
+
+  networking.firewall.allowedTCPPorts = [4444];
 
   ### --- Hardware specific --- ###
   boot.loader.grub.enable = true;
