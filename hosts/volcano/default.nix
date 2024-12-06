@@ -7,7 +7,8 @@
     ./hardware-configuration.nix
   ];
 
-  custom.services.k3s.enable = lib.mkDefault true;
+  custom.services.k3s.enable = false;
+  custom.shells.git.enable = true;
 
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
