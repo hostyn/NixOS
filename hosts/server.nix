@@ -51,11 +51,11 @@
     }
   ];
 
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 
   home-manager.users.${vars.user} = {
     home = {
-      stateVersion = "24.05";
+      stateVersion = "24.11";
     };
     programs = {
       home-manager.enable = true;

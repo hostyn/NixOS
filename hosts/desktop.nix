@@ -112,11 +112,10 @@
         brave
         calibre # Ebook manager
         cifs-utils
-        discord # Chat
         feh
+        feishin
         firefox
         gparted # Partition manager  TODO: Fix this
-        jdk22
         jetbrains.idea-community-bin
         kdePackages.ark
         kubectl # Kubernetes CLI
@@ -127,11 +126,12 @@
         nixd
         nixpkgs-fmt
         obsidian # Notes
-        openlens # Kubernetes dashboard
+        lens # Kubernetes dashboard
         pavucontrol
         python3
         remmina
         vlc
+        webcord # Discord client
         youtube-music
       ])
       ++ (with unstable; [
@@ -170,12 +170,12 @@
     #   enable = true;
     #   channel = "https://nixos.org/channels/nixos-unstable";
     # };
-    stateVersion = "24.05";
+    stateVersion = "24.11";
   };
 
   home-manager.users.${vars.user} = {
     home = {
-      stateVersion = "24.05";
+      stateVersion = "24.11";
     };
     programs = {
       home-manager.enable = true;

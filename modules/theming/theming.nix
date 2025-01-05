@@ -16,9 +16,9 @@ in {
       home = {
         pointerCursor = {
           gtk.enable = true;
-          name = "macOS-BigSur";
+          name = "macOS";
           package = pkgs.apple-cursor;
-          size = 16;
+          size = 20;
         };
       };
 
@@ -26,7 +26,7 @@ in {
         enable = true;
         theme = {
           name = "Adwaita-dark";
-          package = pkgs.gnome.gnome-themes-extra;
+          package = pkgs.gnome-themes-extra;
         };
         iconTheme = {
           name = "Papirus-Dark";

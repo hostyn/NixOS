@@ -9,9 +9,6 @@
   cfg = config.custom.desktops.hyprland;
 in {
   config = lib.mkIf cfg.enable {
-    # FIX: Label only update when there user input (keyboard or mouse)
-    # https://github.com/hyprwm/hyprlock/issues/357
-
     home-manager.users.${vars.user} = {
       programs.hyprlock = {
         enable = true;
@@ -27,7 +24,7 @@ in {
 
           general = {
             no_fade_in = false;
-            grace = 0;
+            grace = 5;
             disable_loading_bar = false;
             hide_cursor = true;
             ignore_empty_password = true;
@@ -54,7 +51,7 @@ in {
               text = "cmd[update:1000] date +%H:%M:%S";
               font_size = 64;
               font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
-              position = "0, 64";
+              position = "0, 112";
               halign = "center";
               valign = "center";
             }
@@ -83,7 +80,7 @@ in {
               text = "cmd[update:1000] echo \"$(playerctl metadata -a --format '{{ status }} {{ title }} - {{ artist }} 󰎇 ' | grep Playing | cut -d' ' -f2- | head -n 1)\"";
               font_size = 12;
               font_family = "JetBrains Mono Nerd Font Mono";
-              position = "0, 0";
+              position = "0, 16";
               halign = "center";
               valign = "bottom";
             }

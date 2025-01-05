@@ -17,7 +17,7 @@ in {
         enable = true;
 
         shellIntegration.enableZshIntegration = true;
-        theme = "Dracula";
+        themeFile = "Dracula";
         font.name = "Mononoki Nerd Font Regular";
         font.size = 14;
         settings = {
