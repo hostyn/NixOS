@@ -1,6 +1,7 @@
 [
   ./alacritty.nix
   ./codium.nix
+  ./fileManager.nix
   ./kitty.nix
   ./nh.nix
   ./obs.nix

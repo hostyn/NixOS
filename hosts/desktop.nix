@@ -17,6 +17,7 @@
 
   custom.programs.alacritty.enable = true;
   custom.programs.codium.enable = true;
+  custom.programs.fileManager.enable = true;
   custom.programs.kitty.enable = true;
   custom.programs.nh.enable = true;
   custom.programs.obs.enable = true;
@@ -120,7 +121,6 @@
         kdePackages.ark
         kubectl # Kubernetes CLI
         libreoffice
-        libsForQt5.dolphin # File manager
         moonlight-qt
         nfs-utils
         nixd
@@ -129,7 +129,6 @@
         lens # Kubernetes dashboard
         pavucontrol
         python3
-        remmina
         vlc
         webcord # Discord client
         youtube-music
