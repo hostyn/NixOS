@@ -19,7 +19,7 @@ in {
       wl-clipboard # Clipboard manager - needed for hyprpicker
       grim # Screenshot tool
       slurp # Region selection tool - needed for grim
-      libsForQt5.polkit-kde-agent # Polkit agent
+      hyprpolkitagent # Polkit agent
       wlsunset # Night mode
       networkmanagerapplet # Internet tray icon
     ];
@@ -38,7 +38,7 @@ in {
             "waybar"
             "udiskie -t"
             "hyprctl dispatch focusmonitor 1"
-            "${pkgs.libsForQt5.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1"
+            "systemctl --user start hyprpolkitagent"
             "${pkgs.wlsunset}/bin/wlsunset -l 38.353717 -L -0.491745 -t 5000"
             "nm-applet"
             "brave --password-store=gnome-libsecret"

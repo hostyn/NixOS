@@ -90,7 +90,6 @@
 
   security = {
     rtkit.enable = true;
-    polkit.enable = true;
   };
 
   fonts.packages = with pkgs; [
