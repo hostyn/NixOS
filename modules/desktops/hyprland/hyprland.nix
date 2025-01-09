@@ -42,6 +42,7 @@ in {
             "${pkgs.wlsunset}/bin/wlsunset -l 38.353717 -L -0.491745 -t 5000"
             "nm-applet"
             "brave --password-store=gnome-libsecret"
+            "${pkgs.syncthingtray}/bin/syncthingtray --wait"
           ];
 
           # KEY BINDINGS
