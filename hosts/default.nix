@@ -96,7 +96,7 @@ in {
       vars = {
         hostname = "volcano";
         user = "hostyn";
-        ipAddress = "192.168.0.200";
+        ipAddress = "192.168.0.210";
       };
     };
 
