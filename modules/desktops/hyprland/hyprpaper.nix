@@ -16,8 +16,8 @@ in {
       services.hyprpaper = {
         enable = true;
         settings = {
-          preload = ["$HOME/.config/wallpapers/car.jpg"];
-          wallpaper = ",$HOME/.config/wallpapers/car.jpg";
+          preload = ["$HOME/.config/wallpapers/island.jpg"];
+          wallpaper = ",$HOME/.config/wallpapers/island.jpg";
         };
       };
     };
