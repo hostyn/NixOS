@@ -61,8 +61,8 @@ in {
 
               # ACTION KEYS
               "$mod Alt_L, P, exec, ${pkgs.hyprpicker}/bin/hyprpicker -ar | xargs -I {} dunstify \"Color copied to clipboard\" \"<span background='{}'>{}</span>\""
-              ", Print, exec, ${pkgs.grim}/bin/grim -o $(hyprctl activeworkspace -j | jq -r '.monitor') $HOME/Pictures/$(date +\"Screenshot_%Y-%m-%d_%H.%M.%S.%s\") && dunstify 'Screnshot saved' 'Saved in ~/Pictures'"
-              "Ctrl_L, Print, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\" $HOME/Pictures/$(date +\"Screenshot_%Y-%m-%d_%H.%M.%S.%s\") && dunstify 'Screnshot saved' 'Saved in ~/Pictures'"
+              ", Print, exec, ${pkgs.grim}/bin/grim -o $(hyprctl activeworkspace -j | jq -r '.monitor') $HOME/Pictures/$(date +\"Screenshot_%Y-%m-%d_%H.%M.%S.%s.png\") && dunstify 'Screnshot saved' 'Saved in ~/Pictures'"
+              "Ctrl_L, Print, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\" $HOME/Pictures/$(date +\"Screenshot_%Y-%m-%d_%H.%M.%S.%s.png\") && dunstify 'Screnshot saved' 'Saved in ~/Pictures'"
 
               # MEDIA KEYS
               ", XF86AudioPlay, exec, ${pkgs.playerctl}/bin/playerctl play-pause"
@@ -131,9 +131,10 @@ in {
             "float, class:(org.kde.polkit-kde-authentication-agent-1)"
             "workspace 3, class:(Code)"
             "workspace 1, class:(Brave-browser)"
-            "workspace 8, class:(YouTube Music)"
+            "workspace 8, class:(feishin)"
             "stayfocused, title:(_crx_)(.*)"
             "float, title:(_crx_)(.*)"
+            "center, floating:1 class:(^(?!\s*$).+)"
           ];
 
           workspace = [
