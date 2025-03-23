@@ -37,6 +37,7 @@ in {
       sops
       unzip
       wget
+      yazi
     ];
 
     home-manager.users.${vars.user}.programs = {
