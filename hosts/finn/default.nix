@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  unstable,
   vars,
   ...
 }: {
@@ -83,6 +82,5 @@
     powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = true;
-    # package = unstable.linuxKernel.packages.linux_6_6.nvidia_x11;
   };
 }

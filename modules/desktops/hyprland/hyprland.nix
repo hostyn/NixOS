@@ -32,6 +32,17 @@ in {
           # MONITORS
           monitor = cfg.monitorsLayout;
 
+          env = [
+            "QT_QPA_PLATFORM, wayland"
+            "QT_QPA_PLATFORMTHEME, qt5ct"
+            "QT_STYLE_OVERRIDE,kvantum"
+            "WLR_NO_HARDWARE_CURSORS, 1"
+            "ELECTRON_OZONE_PLATFORM_HINT, auto"
+            "NIXOS_OZONE_WL, 1"
+            "LIBVA_DRIVER_NAME, nvidia"
+            "__GLX_VENDOR_LIBRARY_NAME, nvidia"
+          ];
+
           # AUTO START
           exec-once = [
             "hyprpaper"
@@ -41,8 +52,8 @@ in {
             "systemctl --user start hyprpolkitagent"
             "${pkgs.wlsunset}/bin/wlsunset -l 38.353717 -L -0.491745 -t 5000"
             "nm-applet"
-            "brave --password-store=gnome-libsecret"
             "${pkgs.syncthingtray}/bin/syncthingtray --wait"
+            "[workspace 1 silent] ${pkgs.brave}/bin/brave --password-store=gnome-libsecret"
           ];
 
           # KEY BINDINGS
@@ -129,12 +140,13 @@ in {
             "float, class:(feh)"
             "float, class:(ark)"
             "float, class:(org.kde.polkit-kde-authentication-agent-1)"
-            "workspace 3, class:(Code)"
-            "workspace 1, class:(Brave-browser)"
+            "workspace 3, class:(code)"
+            "workspace 1, class:(brave-browser)"
             "workspace 8, class:(feishin)"
-            "stayfocused, title:(_crx_)(.*)"
+            "pin, title:(_crx_)(.*)"
             "float, title:(_crx_)(.*)"
-            "center, floating:1 class:(^(?!\s*$).+)"
+            "move onscreen cursor -50% -50%, title:(_crx_)(.*)"
+            "move onscreen cursor -50% -50%, class:(code),floating:1"
           ];
 
           workspace = [
@@ -176,9 +188,10 @@ in {
 
             blur = {
               enabled = true;
+              new_optimizations = true;
+
               size = 3;
               passes = 1;
-
               vibrancy = 0.1696;
             };
           };
