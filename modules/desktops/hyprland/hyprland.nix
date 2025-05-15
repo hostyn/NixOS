@@ -34,13 +34,12 @@ in {
 
           env = [
             "QT_QPA_PLATFORM, wayland"
-            "QT_QPA_PLATFORMTHEME, qt5ct"
-            "QT_STYLE_OVERRIDE,kvantum"
             "WLR_NO_HARDWARE_CURSORS, 1"
             "ELECTRON_OZONE_PLATFORM_HINT, auto"
             "NIXOS_OZONE_WL, 1"
             "LIBVA_DRIVER_NAME, nvidia"
             "__GLX_VENDOR_LIBRARY_NAME, nvidia"
+            "GTK_THEME, adw-gtk3-dark"
           ];
 
           # AUTO START

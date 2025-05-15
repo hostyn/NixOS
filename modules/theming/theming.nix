@@ -45,7 +45,9 @@ in {
 
       qt = {
         enable = true;
-        platformTheme.name = "kde";
+        platformTheme.name = "gtk3";
+        style.name = "adwaita-dark";
+        style.package = pkgs.adwaita-qt6;
       };
     };
   };

@@ -12,6 +12,12 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    xdg.portal.extraPortals = [
+      pkgs.xdg-desktop-portal-hyprland
+      # pkgs.xdg-desktop-portal-kde
+      pkgs.xdg-desktop-portal
+    ];
+
     home-manager.users.${vars.user} = {
       xdg = {
         mime.enable = true;
