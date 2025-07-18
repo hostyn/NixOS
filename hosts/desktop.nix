@@ -38,6 +38,8 @@
   custom.theming.wallpapers.enable = true;
 
   ### --- Other options --- ###
+  programs.nix-ld.enable = true;
+
   sops.defaultSopsFile = ../secrets/desktop.yaml;
   sops.defaultSopsFormat = "yaml";
   sops.age.keyFile = "/home/${vars.user}/.config/sops/age/keys.txt";
