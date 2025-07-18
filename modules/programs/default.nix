@@ -6,4 +6,5 @@
   ./nh.nix
   ./obs.nix
   ./wofi.nix
+  ./yazi.nix
 ]

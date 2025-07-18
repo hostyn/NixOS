@@ -22,6 +22,7 @@
   custom.programs.nh.enable = true;
   custom.programs.obs.enable = true;
   custom.programs.wofi.enable = true;
+  custom.programs.yazi.enable = true;
 
   custom.services.dunst.enable = true;
   custom.services.syncthing.enable = true;
