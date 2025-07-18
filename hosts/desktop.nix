@@ -21,6 +21,7 @@
   custom.programs.kitty.enable = true;
   custom.programs.nh.enable = true;
   custom.programs.obs.enable = true;
+  custom.programs.steam.enable = true;
   custom.programs.wofi.enable = true;
   custom.programs.yazi.enable = true;
 

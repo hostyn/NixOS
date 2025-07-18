@@ -5,6 +5,7 @@
   ./kitty.nix
   ./nh.nix
   ./obs.nix
+  ./steam.nix
   ./wofi.nix
   ./yazi.nix
 ]
