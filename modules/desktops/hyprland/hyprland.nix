@@ -53,6 +53,7 @@ in {
             "nm-applet"
             "${pkgs.syncthingtray}/bin/syncthingtray --wait"
             "[workspace 1 silent] ${pkgs.brave}/bin/brave --password-store=gnome-libsecret"
+            "[workspace special:whatsapp silent] ${pkgs.brave}/bin/brave --password-store=gnome-libsecret --app-id=hnpfjngllnobngcgfapefoaidbinmjnm" # Whatsapp pwa
           ];
 
           # KEY BINDINGS
@@ -68,6 +69,9 @@ in {
               "$mod, G, exec, ${pkgs.brave}/bin/brave --password-store=gnome-libsecret"
               "$mod, V, exec, ${pkgs.vscode}/bin/code --password-store=gnome-libsecret"
               "$mod, M, exec, pidof ${pkgs.wofi}/bin/wofi || ${pkgs.wofi}/bin/wofi --show drun"
+
+              # Whatsapp PWA
+              "$mod ALT_L, N, exec, ${pkgs.brave}/bin/brave --password-store=gnome-libsecret --app-id=hnpfjngllnobngcgfapefoaidbinmjnm"
 
               # ACTION KEYS
               "$mod Alt_L, P, exec, ${pkgs.hyprpicker}/bin/hyprpicker -ar | xargs -I {} dunstify \"Color copied to clipboard\" \"<span background='{}'>{}</span>\""
@@ -108,6 +112,9 @@ in {
               "$mod SHIFT, O, movetoworkspace, 7"
               "$mod SHIFT, P, movetoworkspace, 8"
 
+              # SPECIAL WORKSPACE KEYS
+              "$mod, n, togglespecialworkspace, whatsapp"
+
               # WORKPACE MOVEMENT KEYS
               "$mod, h, movefocus, l"
               "$mod, l, movefocus, r"
@@ -140,8 +147,10 @@ in {
             "float, class:(ark)"
             "float, class:(org.kde.polkit-kde-authentication-agent-1)"
             "workspace 3, class:(code)"
+            "workspace 3, class:(cursor)"
             "workspace 1, class:(brave-browser)"
             "workspace 8, class:(feishin)"
+            "workspace special:whatsapp, class:(brave-hnpfjngllnobngcgfapefoaidbinmjnm-Default)"
             "pin, title:(_crx_)(.*)"
             "float, title:(_crx_)(.*)"
             "move onscreen cursor -50% -50%, title:(_crx_)(.*)"
