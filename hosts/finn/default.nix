@@ -40,6 +40,12 @@
   };
 
   ### --- Hardware specific --- ###
+  swapDevices = [
+    {
+      device = "/dev/disk/by-uuid/c33b4245-bd43-400e-94f7-96c6108cd886";
+    }
+  ];
+
   boot = {
     loader = {
       efi = {
